@@ -4,3 +4,9 @@
 button{
   background-color: orange;
 }
+.red{
+  color: red;
+}
+.bold{
+  font-weight: bold;
+}

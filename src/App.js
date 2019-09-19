@@ -82,26 +82,37 @@ class App extends Component {
         <div>
 
           {this.state.persons.map((person, index) => {
-          
+
             return (<Person
               name={person.name}
               age={person.age}
-              click={()=>this.deletePersonHandler(index)}
+              click={() => this.deletePersonHandler(index)}
               key={person.id}
               changed={(event) => this.nameChangeHandler(event, person.id)}></Person>);
 
           })}
-          
+
 
           <UserInput changed={this.usernameChangeHandler} />
           <UserOutput username={this.state.username}></UserOutput>
         </div>
       );
+      style.backgroundColor = 'red';
     }
+    const classes = [];
+    if (this.state.persons.length <= 2) {
+      classes.push('red');
+    }
+    if (this.state.persons.length <= 1) {
+      classes.push('bold');
+    }
+
+
+
     return (
       <div className="App">
         <h1>hi I am a React App.</h1>
-        <p>this is really working.</p>
+        <p className={classes.join(' ')}>this is really working.</p>
         <button
           style={style}
           onClick={this.togglePersonsHandler}>Toggle Persons</button>

@@ -4,3 +4,8 @@
     border: 1px solid #eee;
     box-shadow: 0 2px 3px #ccc;
 }
+/* @media(min-width:500px){
+    .Person{
+        width: 100px;
+    }
+} */
